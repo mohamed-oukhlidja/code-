@@ -21,3 +21,27 @@ const exchangeRate = {
     return `${this.baseurl}/${this.key}/codes`;
   },
 };
+
+//GET THE USER CURRENCY
+async function getUserCurrency() {
+  const res = await fetch(ipdata.currency());
+  const userCurrency = await res.json();
+  console.log(userCurrency);
+}
+
+//get currencies
+async function getCurrencies() {
+  const res = await fetch(exchangeRate.list());
+  const data = await res.json();
+  return data.supported_codes;
+}
+
+//get the exchange rate
+async function getExchangeRte(fromCurrenvyCode, toCurrenvyCode) {
+  const amount = 1;
+  const res = await fetch(
+    exchangeRate.convert(fromCurrenvyCode, toCurrenvyCode, amount)
+  );
+  const data = await res.json()
+  console.log(data.conversion_rate);
+}
