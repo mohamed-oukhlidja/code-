@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Assets/Css/style.css" />
+    <link rel="stylesheet" href="./Assets/Css/mediaqueries.css" />
+    <title>Mohamed Oukhlidja | Full-stack Developer</title>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Mohamed Oukhidja</div>
+      <div>
+        <ul class="ul nav-links">
+          <li><a href="#about">About </a></li>
+          <li><a href="#porject">Experience </a></li>
+          <li><a href="#somthing"> Project </a></li>
+          <li><a href="#somthing"> Contact Me </a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Mohamed Oukhidja</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About </a></li>
+            <li><a href="#porject"onclick="toggleMenu()">Experience </a></li>
+            <li><a href="#somthing"onclick="toggleMenu()"> Project </a></li>
+            <li><a href="#somthing"onclick="toggleMenu()"> Contact </a></li>
+          
+        </div>
+      </div>
+    </nav>
+
+    <script src="./Assets/Js/main.js"></script>
+  </body>
+</html>
