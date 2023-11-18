@@ -1,10 +1,9 @@
-//select HTML elements 
-const exchangeRateElement = document.querySelector(".exchange-rate")
-
+//select HTML elements
+const exchangeRateElement = document.querySelector(".exchange-rate");
 
 //const and vars
 const deefaultCurrency = "USD";
-let exchangeRateNum = 0;
+let exchangeRateNum, currencies;
 
 // API PROVIDERS
 const ipdata = {
@@ -35,7 +34,6 @@ async function getUserCurrency() {
   const res = await fetch(ipdata.currency());
   const userCurrency = await res.json();
   return userCurrency;
-  console.log(userCurrency);
 }
 
 //get currencies
@@ -58,12 +56,13 @@ async function getExchangeRte(fromCurrenvyCode, toCurrenvyCode) {
 async function renderExchangeRate(fromCurrenvyCode, toCurrenvyCode) {
   exchangeRateNum = await getExchangeRte(fromCurrenvyCode, toCurrenvyCode);
   exchangeRateElement.innerHTML = `<p>1 ${fromCurrenvyCode} equals</p>
-                                  <h1>${exchangeRateNum} ${toCurrenvyCode}</h1>`
+                                  <h1>${exchangeRateNum} ${toCurrenvyCode}</h1>`;
 }
 
 //init app
 async function init() {
   const userCurrency = await getUserCurrency();
+  currencies = await getCurrencies();
   //render exchange rate
   renderExchangeRate(deefaultCurrency, userCurrency.code);
 
@@ -72,3 +71,17 @@ async function init() {
   //convert
 }
 init();
+
+async function work() {
+  currencies = await getCurrencies();
+  for (let index = 0; index < currencies.length; index++) {
+    const element = currencies[index];
+    console.log(element);
+    for (let j = 0; j < element.length; j++) {
+      const e = element[j] ; 
+    }
+  }
+
+}
+
+work()
