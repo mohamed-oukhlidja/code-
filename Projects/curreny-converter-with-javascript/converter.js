@@ -1,5 +1,10 @@
+//select HTML elements 
+const exchangeRateElement = document.querySelector(".exchange-rate")
+
+
 //const and vars
 const deefaultCurrency = "USD";
+let exchangeRateNum = 0;
 
 // API PROVIDERS
 const ipdata = {
@@ -50,8 +55,10 @@ async function getExchangeRte(fromCurrenvyCode, toCurrenvyCode) {
   return data.conversion_rate;
 }
 
-function renderExchangeRate(fromCurrenvyCode, toCurrenvyCode) {
-  console.log(fromCurrenvyCode, toCurrenvyCode);
+async function renderExchangeRate(fromCurrenvyCode, toCurrenvyCode) {
+  exchangeRateNum = await getExchangeRte(fromCurrenvyCode, toCurrenvyCode);
+  exchangeRateElement.innerHTML = `<p>1 ${fromCurrenvyCode} equals</p>
+                                  <h1>${exchangeRateNum} ${toCurrenvyCode}</h1>`
 }
 
 //init app
@@ -64,3 +71,4 @@ async function init() {
 
   //convert
 }
+init();
