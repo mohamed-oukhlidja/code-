@@ -74,11 +74,14 @@ init();
 
 async function work() {
   currencies = await getCurrencies();
-  for (let index = 0; index < currencies.length; index++) {
-    const element = currencies[index];
-    console.log(element);
+  for (let i = 0; i < currencies.length; i++) {
+    const element = currencies[i]
     for (let j = 0; j < element.length; j++) {
-      const e = element[j] ; 
+      const e = element[j] ;
+      if (e[i][j] === deefaultCurrency) {
+        console.log('value founded at (' + i +',' + j +')');
+        
+      }
     }
   }
 
