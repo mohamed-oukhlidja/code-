@@ -1,3 +1,6 @@
+//const and vars
+const deefaultCurrency = "USD";
+
 // API PROVIDERS
 const ipdata = {
   baseurl: "https://api.ipdata.co",
@@ -26,6 +29,7 @@ const exchangeRate = {
 async function getUserCurrency() {
   const res = await fetch(ipdata.currency());
   const userCurrency = await res.json();
+  return userCurrency;
   console.log(userCurrency);
 }
 
@@ -42,6 +46,21 @@ async function getExchangeRte(fromCurrenvyCode, toCurrenvyCode) {
   const res = await fetch(
     exchangeRate.convert(fromCurrenvyCode, toCurrenvyCode, amount)
   );
-  const data = await res.json()
-  console.log(data.conversion_rate);
+  const data = await res.json();
+  return data.conversion_rate;
+}
+
+function renderExchangeRate(fromCurrenvyCode, toCurrenvyCode) {
+  console.log(fromCurrenvyCode, toCurrenvyCode);
+}
+
+//init app
+async function init() {
+  const userCurrency = await getUserCurrency();
+  //render exchange rate
+  renderExchangeRate(deefaultCurrency, userCurrency.code);
+
+  //rednder select options
+
+  //convert
 }
