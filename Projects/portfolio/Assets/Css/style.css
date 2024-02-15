@@ -1,0 +1,67 @@
+/* GOOGLE FONT  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/* COLORS */
+:root {
+  --gray: rgb(85, 85, 85);
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+}
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  color: var(--gray);
+}
+
+/* TRANSITION */
+a,
+.btn {
+  transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+nav,
+.navlinks {
+  display: flex;
+}
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+  /* background-color: red; */
+}
+.navlinks {
+  gap: 3rem;
+  list-style: none;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+}
+a {
+  color: var(--black);
+  text-decoration: none;
+  text-decoration-color: var(--white);
+  -moz-text-decoration-color: var(--white);
+}
+a:hover {
+  color: var(--gray);
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: var(--gray);
+  -moz-text-decoration-color: var(--gray);
+}
