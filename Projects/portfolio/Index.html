@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./Assets/Css/mediaqueries.css" />
   </head>
   <body>
-    <nav class="desktop-nav">
+    <nav id="desktop-nav">
       <div>
         <ul class="navlinks">
           <li><a href="#about">About</a></li>
@@ -26,6 +26,22 @@
             height="100px"
           />
         </a>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"></div>
+      <div class="hamburger-menu">
+        <div class="hambureger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#project" onclick="toggleMenu()">Project</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
       </div>
     </nav>
 
